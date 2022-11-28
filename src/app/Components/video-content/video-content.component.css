@@ -1,0 +1,75 @@
+.videoPlayer {
+  height: 30rem;
+  width: 50rem;
+  border-radius: 10px;
+  box-shadow: 5px 0px 20px rgba(41, 31, 94, 0.418);
+}
+video {
+  border-radius: 10px;
+  border: 1px solid rgb(48, 48, 48);
+  overflow: hidden;
+}
+vg-player{
+  border-radius: 8px;
+}
+.videoPlayer vg-controls {
+  border: 1px solid rgb(48, 48, 48);
+  border-radius: 0px 0px 10px 10px;
+}
+.video-contents {
+  color: #fff;
+  margin-top: 1.5rem;
+}
+.video-contents .sub {
+  display: flex;
+}
+.video-contents .sub h6 {
+  margin-right: 10px;
+}
+.content p {
+  width: 50rem;
+  margin-top: 20px;
+}
+.actionButtons {
+  margin-top: 30px;
+}
+.actionButtons .rate {
+  background-color: rgb(32, 16, 121);
+  color: #fff;
+}
+.actionButtons .delete {
+  background-color: rgb(207, 17, 17);
+  color: #fff;
+  margin-left: 20px;
+}
+.actionButtons .report {
+  background-color: rgb(235, 8, 8);
+  float: right;
+}
+.actionButtons .report i {
+  font-size: 18px;
+  margin-right: 8px;
+}
+.backbtn mat-icon {
+  color: rgb(165, 165, 165);
+  font-size: 20px;
+  height: auto;
+  width: auto;
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+.backbtn mat-icon p {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-left: 5px;
+}
+.backbtn mat-icon:hover {
+  color: white;
+}
+
+@media (max-width: 786px) {
+  .single-content {
+    transform: scale(0.4);
+  }
+}

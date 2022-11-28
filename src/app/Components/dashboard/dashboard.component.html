@@ -1,0 +1,42 @@
+<app-dashboard-nav></app-dashboard-nav>
+<div class="dashboard-main">
+    <button
+    class="menubtn"
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+<mat-sidenav-container >
+  <mat-sidenav mode="over"  #sidenav="matSidenav" class="sidenav">   
+    <button mat-button class="menu-button" routerLink="dashboardHome"outerLinkActive="active">
+      <mat-icon>home</mat-icon>
+      <span routerLink="home">Home</span>
+    </button>
+    <button mat-button class="menu-button"  routerLinkActive="active">
+        <mat-icon>category</mat-icon>
+        <span routerLink="home">Category</span>
+    </button>
+      <button mat-button class="menu-button" routerLink="videoUpload" routerLinkActive="active">
+        <mat-icon>upload</mat-icon>
+        <span routerLink="home">Upload video</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="settings" routerLinkActive="active">
+        <mat-icon>settings</mat-icon>
+        <span routerLink="home">Settings</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active">
+        <mat-icon>logout</mat-icon>
+        <span routerLink="home">Logout</span>
+      </button>
+  </mat-sidenav>
+  <mat-sidenav-content class="content-hero" style="margin-left: 0px">
+    <div class="content mat-elevation-z4">
+      <div class="content-head">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>

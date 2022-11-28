@@ -1,0 +1,45 @@
+.sign-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  background-image: url(../../../assets/images/banner.png);
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+form {
+  background-color: rgba(2, 2, 2, 0.548);
+  padding: 90px 70px;
+  border-radius: 10px;
+  border: 2px solid rgb(27, 27, 27);
+  backdrop-filter: blur(4px);
+}
+.sign-main h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.sign-main input {
+  padding: 10px;
+}
+.sign-main button {
+  background-color: rgb(32, 16, 121);
+  padding: 8px 30px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  margin-top: 10px;
+}
+.navigate p {
+  margin-top: 40px;
+}
+.navigate p span {
+  margin-left: 6px;
+  cursor: pointer;
+  color: rgb(36, 31, 133);
+  font-weight: 800;
+}
+small {
+  font-size: 12px;
+}

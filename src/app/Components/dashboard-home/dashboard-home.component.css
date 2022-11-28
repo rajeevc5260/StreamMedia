@@ -1,0 +1,45 @@
+.home-main {
+  margin: 30px;
+}
+.cards-tile .contents {
+  margin-top: 5px;
+}
+
+.cards-tile {
+  color: rgb(221, 221, 221);
+  transition: ease-in-out 250ms;
+  cursor: pointer;
+}
+.cards-tile:hover {
+  transform: scale(1.1);
+}
+.contents h5 {
+  font-weight: 600;
+}
+.contents h6 {
+  font-size: 12px;
+  font-weight: 300;
+  width: 260px;
+  height: 30px;
+  overflow: hidden;
+}
+.cards-tile img {
+  height: 140px;
+  width: 250px;
+  border-radius: 4px 4px 0px 0px;
+}
+.contents p {
+  margin-top: 2px;
+  font-size: 12px;
+  display: flex;
+}
+mat-icon {
+  font-size: 18px;
+  color: rgba(78, 78, 78, 0.822);
+}
+.contents .sub {
+  display: flex;
+}
+.contents .sub span {
+  margin-left: 15px;
+}

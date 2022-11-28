@@ -1,0 +1,42 @@
+.divider {
+  background-color: #737373;
+  width: 100%;
+  height: 2px;
+}
+.footer-main {
+  display: flex;
+  justify-content: center;
+  color: #737373;
+  margin-top: 4rem;
+  height: Auto;
+}
+.footer-heading h6 {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+.footerLinks {
+  display: flex;
+  justify-content: center;
+}
+.links-colums {
+  min-width: 210px;
+}
+.links-colums ul li {
+  font-size: 14px;
+  padding-top: 12px;
+  cursor: pointer;
+}
+
+.links-colums ul li:hover {
+  text-decoration: underline;
+}
+.end {
+  text-align: center;
+  margin-top: 50px;
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 768px) {
+  .footerLinks {
+    display: block;
+  }
+}

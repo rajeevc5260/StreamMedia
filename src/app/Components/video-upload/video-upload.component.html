@@ -1,0 +1,37 @@
+<div class="upload">
+    <form>
+      <h2>UPLOAD NEW VIDEO</h2>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Enter the title">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Enter description">
+        </div>
+        <div class="mb-3"> 
+          <label class="form-label">Upload Thumbnail</label>
+          <input type="file" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Upload video</label>
+            <input type="file"  (change)="onSelectFile($event)" class="form-control">
+            <video [src]="url" *ngIf="format==='video' && url" height="200" controls></video>
+        </div>
+        <div class="mb-3"> 
+          <label class="form-label">Upload subtitle</label>
+          <input type="file" class="form-control">
+        </div>
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Select category</option>
+                <option value="movies">Movies</option>
+                <option value="sports">Sports</option>
+                <option value="music">Music</option>
+                <option value="gaming">Gaming</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Author">
+        </div>
+        <button mat-button>Upload</button>
+    </form>
+</div>

@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  padding: 20px 30px;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.884),
+    rgba(7, 7, 7, 0.048)
+  );
+  z-index: 99;
+}
+.spaceBtw {
+  flex: 1 1 auto;
+}
+.buttons button {
+  margin-top: 7px;
+  padding: 0px 20px;
+  margin-inline: 5px;
+  color: #fff;
+}
+.searchBtn {
+  background-color: rgb(32, 16, 121);
+  transition: all 250ms;
+  border-radius: 8px;
+}
+.search {
+  display: flex;
+}
+.search input {
+  margin-top: 8px;
+  width: 20rem;
+  height: 40px;
+}
+.buttons {
+  display: flex;
+}
+.buttons img {
+  margin-left: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+

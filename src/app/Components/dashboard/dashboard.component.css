@@ -1,0 +1,64 @@
+.dashboard-main {
+  padding-top: 70px;
+}
+.sidenav button {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  margin-top: 20px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(170, 66, 66, 0);
+  color: #fff;
+  transition: ease-in-out 250ms;
+}
+.sidenav button:hover {
+  background-color: #464545;
+}
+.menubtn {
+  margin-top: 10px;
+  background-color: #0c0c0c;
+  color: rgb(110, 110, 110);
+  z-index: 99;
+}
+.sidenav mat-icon {
+  font-size: 22px;
+  color: rgb(241, 241, 241);
+}
+.sidenav span {
+  padding-left: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+mat-sidenav {
+  padding-top: 10px;
+  width: 15.1%;
+  border-right: none;
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  background-color: #0d1117;
+}
+.content {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin-left: 15.2%;
+  background-size: cover;
+  background-color: #0d1117;
+}
+.content {
+  overflow-x: hidden;
+}
+mat-sidenav-container {
+  height: 100%;
+}
+@media (max-width: 768px) {
+  mat-sidenav {
+    width: 60%;
+  }
+  .content {
+    margin-left: 0%;
+  }
+}
