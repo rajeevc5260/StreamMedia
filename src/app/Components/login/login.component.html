@@ -1,18 +1,53 @@
-<app-nav></app-nav>
-<div class="login-main">
-  <form class="col-md-4" #loginDetatils="ngForm">
-    <h2>Login</h2>
-    <div class="mb-3">
-        <input type="email" name="email" #email="ngModel" [(ngModel)]="loginData.email" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" placeholder="Email" required="required"/>
-        <small [class.d-none]="email.valid || email.untouched">*Enter valid email</small>
-      </div>
-      <div class="mb-3">
-        <input type="password" name="password" #password="ngModel" [(ngModel)]="loginData.password" [class.is-invalid]="password.invalid && password.touched"  class="form-control" placeholder="Password" required="required"/>
-        <small [class.d-none]="password.valid || password.untouched  ">*Enter valid password</small>
-      </div>
-    <button  [disabled]="loginDetatils.invalid" class="logBtn">Login</button>
-    <div class="navigate">
-      <p>New to Stream Media ? <span routerLink="/signup">Sign up</span></p>
-    </div>
-  </form>
-</div>
+<mat-tab-group>
+  <mat-tab label="User">
+    <div class="login-main">
+      <form #loginDetatils="ngForm">
+        <h2>User Login</h2>
+        <div class="mb-3">
+            <input type="email" name="email" #email="ngModel" [(ngModel)]="loginData.email" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" placeholder="Email" required="required"/>
+            <small [class.d-none]="email.valid || email.untouched">*Enter valid email</small>
+          </div>
+          <div class="mb-3">
+            <input type="password" name="password" #password="ngModel" [(ngModel)]="loginData.password" [class.is-invalid]="password.invalid && password.touched"  class="form-control" placeholder="Password" required="required"/>
+            <small [class.d-none]="password.valid || password.untouched  ">*Enter valid password</small>
+          </div>
+        <button  [disabled]="loginDetatils.invalid" mat-dialog-close="true" (click)="loginUser()" class="logBtn">Login</button>
+        <div class="navigate">
+          <p>New to Stream Media ? <span mat-dialog-close="true" routerLink="/signup">Sign up</span></p>
+        </div>
+      </form>
+    </div>    
+  </mat-tab>
+  <mat-tab label="Admin">
+    <div class="login-main">
+      <form  #loginDetatils="ngForm">
+        <h2>Admin Login</h2>
+        <div class="mb-3">
+            <input type="email" name="email" #email="ngModel" [(ngModel)]="loginData.email" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" placeholder="Email" required="required"/>
+            <small [class.d-none]="email.valid || email.untouched">*Enter valid email</small>
+          </div>
+          <div class="mb-3">
+            <input type="password" name="password" #password="ngModel" [(ngModel)]="loginData.password" [class.is-invalid]="password.invalid && password.touched"  class="form-control" placeholder="Password" required="required"/>
+            <small [class.d-none]="password.valid || password.untouched  ">*Enter valid password</small>
+          </div>
+        <button  [disabled]="loginDetatils.invalid" mat-dialog-close="true" (click)="loginAdmin()" class="logBtn">Login</button>
+      </form>
+    </div>    
+  </mat-tab>
+  <mat-tab label="Super Admin">
+    <div class="login-main">
+      <form  #loginDetatils="ngForm">
+        <h2>Super Admin <br>Login</h2>
+        <div class="mb-3">
+            <input type="email" name="email" #email="ngModel" [(ngModel)]="loginData.email" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" placeholder="Email" required="required"/>
+            <small [class.d-none]="email.valid || email.untouched">*Enter valid email</small>
+          </div>
+          <div class="mb-3">
+            <input type="password" name="password" #password="ngModel" [(ngModel)]="loginData.password" [class.is-invalid]="password.invalid && password.touched"  class="form-control" placeholder="Password" required="required"/>
+            <small [class.d-none]="password.valid || password.untouched  ">*Enter valid password</small>
+          </div>
+        <button  [disabled]="loginDetatils.invalid" mat-dialog-close="true" (click)="loginSuperAdmin()" class="logBtn">Login</button>
+      </form>
+    </div>    
+  </mat-tab>
+</mat-tab-group>

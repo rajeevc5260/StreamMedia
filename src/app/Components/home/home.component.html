@@ -8,9 +8,11 @@
       Media and Entertainment and Distributions.
     </p>
     <div class="btns">
-      <p>Get started with an account</p>
-      <input type="email" placeholder="Email" />
-      <button>Register</button>
+      <form #registerEmail="ngForm">
+        <p>Get started with an account</p>
+        <input type="email" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="reg.email" [class.is-invalid]="email.invalid && email.touched"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required="required"/>
+        <button [disabled]="registerEmail.invalid" routerLink="/signup">Register</button>
+      </form>
     </div>
   </div>
 </div>

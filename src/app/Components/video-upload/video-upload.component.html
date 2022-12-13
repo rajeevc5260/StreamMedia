@@ -1,27 +1,27 @@
 <div class="upload">
-    <form>
+    <form #videoDetails="ngForm" >
       <h2>UPLOAD NEW VIDEO</h2>
         <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Enter the title">
+          <input type="text" #title (change)="onSelectedTitle(title.value)"  class="form-control" placeholder="Enter the title">
         </div>
         <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Enter description">
+          <input type="text" #desc (change)="onSelectedDesc(desc.value)" class="form-control" placeholder="Enter description">
         </div>
         <div class="mb-3"> 
           <label class="form-label">Upload Thumbnail</label>
-          <input type="file" class="form-control">
+          <input type="file" #singleInput name="video" (change)="onSelectThumbnail($event)" class="form-control">
         </div>
         <div class="mb-3">
             <label class="form-label">Upload video</label>
-            <input type="file"  (change)="onSelectFile($event)" class="form-control">
-            <video [src]="url" *ngIf="format==='video' && url" height="200" controls></video>
+            <input type="file" #singleInput  name="video"  (change)="onSelectVideo($event)" class="form-control">
+            <!-- <video [src]="url" *ngIf="format==='video' && url" height="200" controls></video> -->
         </div>
         <div class="mb-3"> 
           <label class="form-label">Upload subtitle</label>
-          <input type="file" class="form-control">
+          <input type="file" #singleInput name="video" (change)="onSelectSubtitle($event)"   class="form-control">
         </div>
         <div class="mb-3">
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" #category (change)="onSelectedCatagory(category.value)" aria-label="Default select example">
                 <option selected>Select category</option>
                 <option value="movies">Movies</option>
                 <option value="sports">Sports</option>
@@ -30,8 +30,28 @@
             </select>
         </div>
         <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Author">
+            <input type="text" #author (change)="onSelectedAuthor(author.value)" class="form-control" placeholder="Author">
         </div>
-        <button mat-button>Upload</button>
+        <button mat-button (click)="uploadVideo()" >Upload</button>
+
+        
+
+        <!-- Changes made after this to me removed -->
+        <ng-template [ngIf]="displayVideo" [ngIfElse]="elseVideoTemplate">
+          <div>Video uploaded</div>
+          <ul>
+               <li *ngFor="let video of  displayVideoArray">
+                  <!-- <video src="http://localhost:3000/{{video}}"/> -->
+                  <video controls><source src="http://localhost:3000/{{video}}" height="100" /></video>
+                  <!-- <img src="http://localhost:3000/{{video}}" alt=""> -->
+               </li>
+      
+          </ul>
+      </ng-template>
+      <ng-template #elseVideoTemplate>
+          <br/><br/>
+          <div>Please upload some videos</div>
+      
+      </ng-template>
     </form>
 </div>

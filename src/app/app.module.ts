@@ -25,6 +25,10 @@ import { RatingComponent } from './Components/rating/rating.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import { SettingsComponent } from './Components/settings/settings.component';
 import { DashboardNavComponent } from './Components/dashboard-nav/dashboard-nav.component';
+import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatTabsModule } from "@angular/material/tabs";
+
 
 @NgModule({
   declarations: [
@@ -54,7 +58,10 @@ import { DashboardNavComponent } from './Components/dashboard-nav/dashboard-nav.
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

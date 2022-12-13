@@ -18,9 +18,9 @@
         <input type="password" name="passowrd" [(ngModel)]="signupData.password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" class="form-control" placeholder="Password" required="required" />
         <small [class.d-none]="password.valid || password.untouched">*Enter strong  password use special character, caps & small letter, numbers</small>
       </div>
-      <button type="submit" [disabled]="signupDetails.invalid" class="signBtn">Sign Up</button>
+      <button type="submit" [disabled]="signupDetails.invalid" (click)="signUp()" class="signBtn">Sign Up</button>
       <div class="navigate">
-        <p>Already have an account ? <span routerLink="/login">Login</span></p>
+        <p>Already have an account ? <span (click)=" loginOpen()">Login</span></p>
       </div>
     </form>
   </div>
