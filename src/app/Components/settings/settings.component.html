@@ -1,1 +1,24 @@
-<p>settings works!</p>
+<div class="head">
+    <h1>Change Role Privilages</h1>
+  </div>
+  <div class="Settings-details">
+    <form action="">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Date of Birth</th>
+          <th>Current Role</th>
+        </tr>
+        <tr *ngFor="let user of userDatas">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.dob }}</td>
+          <td>{{ user.role }}</td>
+          <td><button mat-button class="update" (click)=" updateUser(user)" >CHANGE ROLE</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  
+  

@@ -17,8 +17,8 @@ const videoUploadSchema = new Schema({
     required: true,
   },
   video: {
-    data: Buffer,
-    contentType: String,
+    type: String,
+    required: true,
   },
   // subtitle: {
   //   data: Buffer,

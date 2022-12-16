@@ -28,7 +28,7 @@
       </button>
       <button mat-button class="menu-button" routerLinkActive="active">
         <mat-icon>logout</mat-icon>
-        <span routerLink="home">Logout</span>
+        <span (click)="authServices.logOut()">Logout</span>
       </button>
   </mat-sidenav>
   <mat-sidenav-content class="content-hero" style="margin-left: 0px">

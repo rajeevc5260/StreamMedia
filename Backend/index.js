@@ -6,10 +6,13 @@ const passport = require("passport");
 const { success, error } = require("consola");
 const { connect } = require("mongoose");
 const videoUploadModel = require("./models/videoUpload.Model");
-const path = require('path')
+const path = require('path');
+const { userRegister, userLogin, userAuth, serializeUser, checkRole } = require("./utils/auth");
 
 // Brings the APP constants
 const { DB, PORT } = require("./config");
+const userDetail = require("./models/userDetail");
+const { verify } = require("crypto");
 
 // initialzing the APP
 const app = new express();
@@ -62,10 +65,11 @@ app.post("/videoUpload",upload,(req,res,next)=>{
       //   contentType: "image/png"
       // },
       desc: req.body.desc,
-      video: {
-        data: req.file.filename,
-        contentType: "video/mp4",
-      },
+      // video: {
+      //   data: req.file.filename,
+      //   contentType: "video/mp4",
+      // },
+      video: req.file.filename,
       // subtitle:{
       //   data: req.file.filename,
       //   contentType: "text/vvt"
@@ -81,6 +85,80 @@ app.post("/videoUpload",upload,(req,res,next)=>{
   }
 });
 
+
+
+// Get all video and details
+app.get("/videoDetails", (req, res) => {
+  videoUploadModel.find().then((videoData) => {
+    res.send(videoData);
+  });
+});
+
+
+//get individual video
+app.get("/videoDetails/:id", (req, res) => {
+  const id = req.params.id;
+  videoUploadModel.findOne({ _id: id }).then((videoContent) => {
+    res.send(videoContent);
+  });
+});
+
+
+// Read User Auth details
+
+app.get("/getUserDetails", (req, res) => {
+  userDetail.find().then((getUser) => {
+   return res.send(getUser);
+  });
+});
+
+//get for Userupdate to find id and get
+app.get("/getUserDetails/:id", (req, res) => {
+  const id = req.params.id;
+  userDetail.findOne({ _id: id }).then((getUser) => {
+    res.send(getUser);
+  });
+});
+
+// Update user role details
+app.put("/roleUpdate", (req, res) => {
+  var id = req.params.id;
+  var name = req.params.name;
+  var email = req.params.email;
+  var dob = req.params.dob;
+  var role = req.params.role;
+
+  console.log(req.body);
+  (id = req.body._id),
+    (name = req.params.name),
+    (email = req.params.email),
+    (dob = req.params.dob),
+    (role = req.params.role),
+    userDetail
+      .findByIdAndUpdate(
+        { _id: id },
+        {
+          $set: {
+            name : req.params.name,
+            email : req.params.email,
+            dob : req.params.dob,
+            role : req.params.role,
+          },
+        }
+      )
+      .then(() => {
+        res.send();
+      });
+});
+
+// Delete a video
+app.delete('/deletevideo/:id',(req,res)=>{
+  console.log("delete video")
+  const id = req.params.id;
+  videoUploadModel.findByIdAndDelete({_id:id}).then(function(videofile){
+    res.send(videofile)
+  })
+})
 
 
 // Database connection and Server running

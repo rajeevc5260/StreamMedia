@@ -1,18 +1,20 @@
 <div class="home-main">
   <div class="row row-cols-1 row-cols-md-4 g-4">
-    <div class="col" routerLink="/dashboard/videoContent">
-        <div class="cards-tile">
-            <img src="../../../assets/images/spidermanBg.jpg" alt="" />
-            <div class="contents">
-                <h5>Title</h5>
-                <h6>A paragraph is a self-contained unit of discourse in writing dealing with a particular point or idea. Though not required by the orthographic conventions of any language with a writing system</h6>
-                <div class="sub">
-                  <p><mat-icon>visibility</mat-icon>views</p>
-                 <span><p><mat-icon>star_half</mat-icon> rating</p></span>
+        <div class="col" (click)="VideoDetails(video)"  *ngFor="let video of videoData">
+            <div class="cards-tile">
+                <!-- <img src="http://localhost:3000/{{video.video}}" alt="" /> -->
+                <video src="http://localhost:3000/{{video.video}}" controls></video>
+                <div class="contents">
+                    <h5>{{video.title}}</h5>
+                    <h6>{{video.desc}}</h6>
+                    <div class="sub">
+                      <p>Author : {{video.author}}</p>
+                     <span><p><mat-icon>star_half</mat-icon> rating</p></span>
+                     
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <div class="col">
         <div class="cards-tile" >
             <img src="../../../assets/images/spidermanBg.jpg" alt="" />

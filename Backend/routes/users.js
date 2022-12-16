@@ -38,7 +38,7 @@ router.get("/profile", userAuth, async (req, res) => {
 
 //  users protected route
 router.get("/userProtected", userAuth, checkRole(["user"]), async (req, res) => {
-    return res.json("Hello User");
+     console.log("user logged in");
 });
 
 //  admin protected route

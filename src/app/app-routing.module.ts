@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { DashboardHomeComponent } from './Components/dashboard-home/dashboard-home.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -15,12 +16,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'dashboard', redirectTo: 'dashboard/dashboardHome', pathMatch:'full' },
-  { path: 'dashboard', component: DashboardComponent,
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard] ,
   children: [
-    { path:'dashboardHome', component: DashboardHomeComponent },
-    { path:'videoContent', component: VideoContentComponent },
-    { path:'videoUpload', component: VideoUploadComponent },
-    { path:'settings', component:SettingsComponent },
+    { path:'dashboardHome', component: DashboardHomeComponent, },
+    { path:'videoContent', component: VideoContentComponent,  },
+    { path:'videoUpload', component: VideoUploadComponent, },
+    { path:'settings', component:SettingsComponent, },
 ]
 }
 ];

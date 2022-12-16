@@ -23,10 +23,10 @@
         <div class="mb-3">
             <select class="form-select" #category (change)="onSelectedCatagory(category.value)" aria-label="Default select example">
                 <option selected>Select category</option>
-                <option value="movies">Movies</option>
-                <option value="sports">Sports</option>
-                <option value="music">Music</option>
-                <option value="gaming">Gaming</option>
+                <option value="Movies">Movies</option>
+                <option value="Sports">Sports</option>
+                <option value="Music">Music</option>
+                <option value="Gaming">Gaming</option>
             </select>
         </div>
         <div class="mb-3">
@@ -42,7 +42,7 @@
           <ul>
                <li *ngFor="let video of  displayVideoArray">
                   <!-- <video src="http://localhost:3000/{{video}}"/> -->
-                  <video controls><source src="http://localhost:3000/{{video}}" height="100" /></video>
+                  <video controls  height="200px"><source src="http://localhost:3000/{{video}}"  /></video>
                   <!-- <img src="http://localhost:3000/{{video}}" alt=""> -->
                </li>
       
@@ -50,7 +50,7 @@
       </ng-template>
       <ng-template #elseVideoTemplate>
           <br/><br/>
-          <div>Please upload some videos</div>
+          <!-- <div>Please upload some videos</div> -->
       
       </ng-template>
     </form>

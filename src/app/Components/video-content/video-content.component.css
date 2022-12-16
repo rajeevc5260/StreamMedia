@@ -26,6 +26,10 @@ vg-player{
 .video-contents .sub h6 {
   margin-right: 10px;
 }
+h6 span{
+  color: rgb(36, 1, 190);
+  font-weight: 700;
+}
 .content p {
   width: 50rem;
   margin-top: 20px;

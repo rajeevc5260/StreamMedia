@@ -80,8 +80,8 @@ export class VideoUploadComponent implements OnInit {
     formdata.set("category", this.category),
     formdata.set("author", this.author),
     formdata.append('video', this.thumbnail),
-    formdata.append('video', this.subtitle),
-    formdata.append('video', this.videos)}
+    formdata.append('video', this.videos),
+    formdata.append('video', this.subtitle)}
     console.log('formdata in uploadVideo', this.videos);
     this.Videoupload.uploadVideo(formdata).subscribe((res) => {
       alert("Video uploaded successfully")

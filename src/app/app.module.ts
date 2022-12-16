@@ -25,9 +25,14 @@ import { RatingComponent } from './Components/rating/rating.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import { SettingsComponent } from './Components/settings/settings.component';
 import { DashboardNavComponent } from './Components/dashboard-nav/dashboard-nav.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatTabsModule } from "@angular/material/tabs";
+import { UpdateRoleComponent } from './Components/update-role/update-role.component';
+import { AuthService } from './Services/auth.service';
+import { AuthGuard } from './auth.guard';
+import { VideoService } from './Services/video.service';
+import { TokenInterceptorService } from './Services/token-interceptor.service';
 
 
 @NgModule({
@@ -45,6 +50,7 @@ import { MatTabsModule } from "@angular/material/tabs";
     RatingComponent,
     SettingsComponent,
     DashboardNavComponent,
+    UpdateRoleComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +69,11 @@ import { MatTabsModule } from "@angular/material/tabs";
     ReactiveFormsModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard, VideoService,
+  {provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true}
+],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,46 +1,50 @@
-<div class="single-content">
-    <div class="backbtn" routerLink="/dashboard"><mat-icon>west<p>back to home</p></mat-icon></div>
-    <div class="videoPlayer">
-        <vg-player>
-          <vg-overlay-play></vg-overlay-play>
-          <vg-buffering></vg-buffering>
-          <vg-scrub-bar>
-              <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-              <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-          </vg-scrub-bar>
-          <vg-controls  [vgAutohide]="true" [vgAutohideTime]="3">
-              <vg-play-pause></vg-play-pause>
-              <vg-playback-button></vg-playback-button>
-              <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
-              <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
-              <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-              <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
-              <vg-track-selector></vg-track-selector>
-              <vg-mute></vg-mute>
-              <vg-volume></vg-volume>
-              <vg-fullscreen></vg-fullscreen>
-          </vg-controls>
-          <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" crossorigin>
-              <source src="../../../assets/videos/spiderman-no_way_home.mp4" type="video/mp4">
-              <track kind="subtitles" label="English" src="../../../assets/videos/spidermanSubtitle.vtt" srclang="en" default>
-              <track kind="subtitles" label="Español" src="http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt" srclang="es">
-          </video>
-      </vg-player>
-    </div>
-    <div class="video-contents">
-        <div class="content">
-            <h2>Spider Man - No way home</h2>
-            <p>With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.</p>
-            <div class="sub">
-                <h6>Rating</h6>
-                <h6>views</h6>
+<div class="single-content" >
+        <div class="backbtn" routerLink="/dashboard"><mat-icon>west<p>back to home</p></mat-icon>
+        </div>
+        <form action="">
+            <div class="videoPlayer">
+                <vg-player >
+                  <vg-overlay-play></vg-overlay-play>
+                  <vg-buffering></vg-buffering>
+                  <vg-scrub-bar>
+                      <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                      <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                  </vg-scrub-bar>
+                  <vg-controls  [vgAutohide]="true" [vgAutohideTime]="3">
+                      <vg-play-pause></vg-play-pause>
+                      <vg-playback-button></vg-playback-button>
+                      <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+                      <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+                      <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+                      <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+                      <vg-track-selector></vg-track-selector>
+                      <vg-mute></vg-mute>
+                      <vg-volume></vg-volume>
+                      <vg-fullscreen></vg-fullscreen>
+                  </vg-controls>
+                  
+                  <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" crossorigin>
+                      <source name="video" src="" >
+                      <track kind="subtitles" label="English" src="../../../assets/videos/spidermanSubtitle.vtt" srclang="en" default>
+                      <track kind="subtitles" label="Español" src="http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt" srclang="es">
+                  </video>
+              </vg-player>
             </div>
-        </div>
-        <div class="actionButtons">
-            <button mat-button class="rate" (click)="rateOpen()">Rate video</button>
-            <button mat-button class="delete" >Delete video</button>
-            <button mat-button class="report" ><i class='bx bx-error-circle'></i>Report this video</button>
-        </div>
-        
-    </div>
+            <div class="video-contents">
+                <div class="content">
+                    <h2>{{videoDetail.title}}</h2>
+                    <p>{{videoDetail.desc}}</p>
+                    <div class="sub">
+                        <h6>Rating: <span>Rate</span> </h6>
+                        <h6>Author: <span>{{videoDetail.author}}</span></h6>
+                        <h6>Category: <span>{{videoDetail.category}}</span></h6>
+                    </div>
+                </div>
+                <div class="actionButtons">
+                    <button mat-button class="rate" (click)="rateOpen()">Rate video</button>
+                    <button mat-button class="delete"  >Delete video</button>
+                    <button mat-button class="report" ><i class='bx bx-error-circle'></i>Report this video</button>
+                </div>
+            </div>
+        </form>
 </div>

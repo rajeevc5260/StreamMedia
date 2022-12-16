@@ -1,0 +1,41 @@
+.head h1 {
+    color: rgb(255, 255, 255);
+    font-weight: 900;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .filter {
+    display: flex;
+    justify-content: center;
+  }
+  .filter select {
+    margin-inline: 16px;
+    width: 150px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 10%;
+    color: #dddddd;
+  }
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  /* tr:nth-child(even) {
+    background-color: #dddddd;
+  } */
+ 
+  .update {
+    background-color: rgb(32, 16, 121);
+    color: #fff;
+  
+  }
+  mat-icon {
+    color: #dddddd;
+  }
+  

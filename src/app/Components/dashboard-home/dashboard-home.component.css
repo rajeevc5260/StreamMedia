@@ -28,6 +28,10 @@
   width: 250px;
   border-radius: 4px 4px 0px 0px;
 }
+.cards-tile video {
+  height: 140px;
+  width: 250px;
+}
 .contents p {
   margin-top: 2px;
   font-size: 12px;
