@@ -30,6 +30,7 @@ export class VideoUploadComponent implements OnInit {
   desc:string = ""
   category:string = ""
   author:string = ""
+  rating:string = "0"
   subtitle: any;
   thumbnail:any
 
@@ -51,7 +52,9 @@ export class VideoUploadComponent implements OnInit {
   onSelectedAuthor(author:any){
     this.author = author
   }
-
+  onSelectedRating(rating: any) {
+    this.rating = rating;
+  }
   onSelectThumbnail(event: any) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
@@ -71,6 +74,7 @@ export class VideoUploadComponent implements OnInit {
       console.log('files:', file);
       this.videos = file;
     }}
+    
 
   uploadVideo() {
     // construct fomdata
@@ -79,6 +83,7 @@ export class VideoUploadComponent implements OnInit {
     formdata.set("desc", this.desc),
     formdata.set("category", this.category),
     formdata.set("author", this.author),
+    formdata.set("rating", this.rating),
     formdata.append('video', this.thumbnail),
     formdata.append('video', this.videos),
     formdata.append('video', this.subtitle)}

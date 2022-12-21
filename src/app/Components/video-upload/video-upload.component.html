@@ -5,7 +5,7 @@
           <input type="text" #title (change)="onSelectedTitle(title.value)"  class="form-control" placeholder="Enter the title">
         </div>
         <div class="mb-3">
-          <input type="text" #desc (change)="onSelectedDesc(desc.value)" class="form-control" placeholder="Enter description">
+          <textarea rows="4" cols="50" #desc (change)="onSelectedDesc(desc.value)"   class="form-control"  placeholder="Enter description"></textarea>
         </div>
         <div class="mb-3"> 
           <label class="form-label">Upload Thumbnail</label>
@@ -14,7 +14,6 @@
         <div class="mb-3">
             <label class="form-label">Upload video</label>
             <input type="file" #singleInput  name="video"  (change)="onSelectVideo($event)" class="form-control">
-            <!-- <video [src]="url" *ngIf="format==='video' && url" height="200" controls></video> -->
         </div>
         <div class="mb-3"> 
           <label class="form-label">Upload subtitle</label>
@@ -32,6 +31,9 @@
         <div class="mb-3">
             <input type="text" #author (change)="onSelectedAuthor(author.value)" class="form-control" placeholder="Author">
         </div>
+        <div class="mb-3">
+          <input type="text" #rating (change)="onSelectedRating(rating.value)" class="form-control rating" placeholder="Rating">
+      </div>
         <button mat-button (click)="uploadVideo()" >Upload</button>
 
         
@@ -41,16 +43,14 @@
           <div>Video uploaded</div>
           <ul>
                <li *ngFor="let video of  displayVideoArray">
-                  <!-- <video src="http://localhost:3000/{{video}}"/> -->
                   <video controls  height="200px"><source src="http://localhost:3000/{{video}}"  /></video>
-                  <!-- <img src="http://localhost:3000/{{video}}" alt=""> -->
                </li>
       
           </ul>
       </ng-template>
       <ng-template #elseVideoTemplate>
           <br/><br/>
-          <!-- <div>Please upload some videos</div> -->
+          <div>Please upload some videos</div>
       
       </ng-template>
     </form>

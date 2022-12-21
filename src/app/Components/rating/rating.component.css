@@ -6,6 +6,15 @@ button {
   color: #fff;
 }
 
-.star i {
-  color: rgb(241, 145, 0);
+.star {
+  color: rgb(202, 202, 202);
+  font-size: 50px ;
+  cursor: pointer;
+}
+
+.active{
+  color:  rgb(255, 211, 13);
+}
+.active:hover{
+  color:  rgb(255, 211, 13);
 }

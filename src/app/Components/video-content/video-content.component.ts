@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -20,12 +21,15 @@ export class VideoContentComponent implements OnInit {
     video:'' ,
     category:'' ,
     author: '',
+    rating: '',
+
   };
  
 
   constructor(
     private dialogePopUp: MatDialog,
     private videoServices: VideoService,
+    private http: HttpClient,
     private router:Router
   ) { this.displayVideoArray=[];}
 
@@ -35,10 +39,7 @@ export class VideoContentComponent implements OnInit {
       this.videoDetail = JSON.parse(JSON.stringify(data));
     });
 
-    // get Trainer head Auth Details
-    this.videoServices.getVideosDetials().subscribe((data) => {
-      this.videoDetail = JSON.parse(JSON.stringify(data));
-    });
+   
   }
   // rating component popup
   rateOpen() {

@@ -6,7 +6,9 @@ export class videoModel {
       public desc: String,
       public video: String,
       public category: String,
-      public author: String
+      public author: String,
+      public rating: String
+
     ) {}
   }
   

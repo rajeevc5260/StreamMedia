@@ -11,11 +11,11 @@ import { AuthService } from 'src/app/Services/auth.service';
 
 
 export class DashboardComponent implements OnInit {
-  sideNavItems = [
-    { icon: 'dashboard', title: 'Dashboard' },
-    { icon: 'dashboard', title: 'Dashboard' },
-    { icon: 'dashboard', title: 'Dashboard' },
-  ];
+  // sideNavItems = [
+  //   { icon: 'dashboard', title: 'Dashboard' },
+  //   { icon: 'dashboard', title: 'Dashboard' },
+  //   { icon: 'dashboard', title: 'Dashboard' },
+  // ];
 
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;

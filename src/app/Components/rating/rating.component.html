@@ -3,20 +3,15 @@
         <form>
             <h1>Rate this video</h1>
             <div class="mb-3">
-                <input type="text" disabled  class="form-control" placeholder="title">
+                <input type="text" disabled name="title" [(ngModel)]="videoDetail.title"  class="form-control" placeholder="title">
             </div>
-            <div class="mb-3">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Rate out of 5</option>
-                    <option value="1">1 star</option>
-                    <option value="2">2 stars</option>
-                    <option value="3">3 stars</option>
-                    <option value="4">4 stars</option>
-                    <option value="5">5 stars</option>
-                </select>
+            <div class="star">
+            <ng-container *ngFor="let star of stars">
+                <i class='bx bxs-star' (click)="selectRating(star)" [ngClass]="{'active': star <= rating}"></i>
+            </ng-container>
             </div>
-           <div class="star"> <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half' ></i></div>
             <button mat-button>Submit</button>
         </form>
     </div>
 </div>
+

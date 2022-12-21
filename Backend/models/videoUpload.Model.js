@@ -32,6 +32,10 @@ const videoUploadSchema = new Schema({
     type: String,
     required: true,
   },
+  rating: {
+    type: String,
+    required: true,
+  },
 });
 
 const videoUpload = mongoose.model("videosData", videoUploadSchema);

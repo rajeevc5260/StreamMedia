@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { CategoryComponent } from './Components/category/category.component';
 import { DashboardHomeComponent } from './Components/dashboard-home/dashboard-home.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   children: [
     { path:'dashboardHome', component: DashboardHomeComponent, },
     { path:'videoContent', component: VideoContentComponent,  },
+    { path:'category', component: CategoryComponent,  },
     { path:'videoUpload', component: VideoUploadComponent, },
     { path:'settings', component:SettingsComponent, },
 ]

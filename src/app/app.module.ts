@@ -33,6 +33,7 @@ import { AuthService } from './Services/auth.service';
 import { AuthGuard } from './auth.guard';
 import { VideoService } from './Services/video.service';
 import { TokenInterceptorService } from './Services/token-interceptor.service';
+import { CategoryComponent } from './Components/category/category.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { TokenInterceptorService } from './Services/token-interceptor.service';
     SettingsComponent,
     DashboardNavComponent,
     UpdateRoleComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,

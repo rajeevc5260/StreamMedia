@@ -14,3 +14,6 @@ button {
   color: #fff;
   background-color: rgb(32, 16, 121);
 }
+.rating{
+  display: none;
+}

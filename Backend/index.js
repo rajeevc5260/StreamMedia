@@ -76,6 +76,7 @@ app.post("/videoUpload",upload,(req,res,next)=>{
       // },
       category: req.body.category,
       author: req.body.author,
+      rating: req.body.rating,
     });
     res.json(file);
     newVideo

@@ -10,7 +10,7 @@ import { UpdateRoleComponent } from '../update-role/update-role.component';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-  userDatas: authDataModel[] = []; // Get for learner model
+  userDatas: authDataModel[] = []; // Get for authmodel schema
   constructor(private _auth:AuthService, private dialogePopUp:MatDialog) { }
 
   

@@ -23,8 +23,8 @@
                       <vg-fullscreen></vg-fullscreen>
                   </vg-controls>
                   
-                  <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" crossorigin>
-                      <source name="video" src="" >
+                  <video [vgMedia]="$any(media)"  #media id="singleVideo" preload="auto" crossorigin>
+                      <source name="video" src="http://localhost:3000/{{videoDetails}}">
                       <track kind="subtitles" label="English" src="../../../assets/videos/spidermanSubtitle.vtt" srclang="en" default>
                       <track kind="subtitles" label="Español" src="http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt" srclang="es">
                   </video>
@@ -35,14 +35,14 @@
                     <h2>{{videoDetail.title}}</h2>
                     <p>{{videoDetail.desc}}</p>
                     <div class="sub">
-                        <h6>Rating: <span>Rate</span> </h6>
+                        <h6>Rating: <span>{{videoDetail.rating}}</span> </h6>
                         <h6>Author: <span>{{videoDetail.author}}</span></h6>
                         <h6>Category: <span>{{videoDetail.category}}</span></h6>
                     </div>
                 </div>
                 <div class="actionButtons">
                     <button mat-button class="rate" (click)="rateOpen()">Rate video</button>
-                    <button mat-button class="delete"  >Delete video</button>
+                    <button mat-button class="delete" (click)="deleteVideo(videoDetail)" >Delete Video</button>
                     <button mat-button class="report" ><i class='bx bx-error-circle'></i>Report this video</button>
                 </div>
             </div>
